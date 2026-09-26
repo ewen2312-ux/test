@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon espace</title>
+  <!-- Fichier CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Mon espace</h1>
+      <p>Crée ton compte ou connecte-toi pour continuer.</p>
+    </header>
+    
+    <!-- CONNEXION / INSCRIPTION -->
+    <section class="panel" id="auth">
+
+      <div class="tabs">
+        <button id="loginTab" class="active" type="button">
+          Se connecter
+        </button>
+
+        <button id="signupTab" type="button">
+          Créer un compte
+        </button>
+      </div>
+
+      <form id="authForm">
+
+        <div class="field">
+          <label for="email">Adresse e-mail</label>
+          <input
+            id="email"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="toi@exemple.fr">
+        </div>
+
+        <div class="field">
+          <label for="password">Mot de passe</label>
+          <input
+            id="password"
+            type="password"
+            minlength="8"
+            required
+            autocomplete="current-password"
+            placeholder="8 caractères minimum">
+        </div>
+
+        <button class="btn" id="submit" type="submit">
+          Se connecter
+        </button>
+
+      </form>
+      
+      <div class="msg" id="msg"></div>
+
+    </section>
+
+    <!-- ESPACE MEMBRE -->
+    <section class="panel hidden" id="member">
+
+      <div class="row">
+        <h2>Espace membre</h2>
+
+        <button class="secondary" id="logout" type="button">
+          Déconnexion
+        </button>
+      </div>
+
+      <p id="welcome"></p>
+
+      <p class="muted">
+        Bienvenue dans ton espace personnel.
+      </p>
+
+    </section>
+
+    <!-- CONNEXION ADMIN -->
+    <section class="panel admin-gate" id="adminGate">
+
+      <h2>Administration</h2>
+
+      <p class="muted">
+        Espace réservé à l'administrateur.
+      </p>
+    
+      <form id="adminForm">
+
+        <div class="field">
+          <label for="adminPass">
+            Mot de passe administrateur
+          </label>
+
+          <input
+            id="adminPass"
+            type="password"
+            required
+            placeholder="Mot de passe admin">
+        </div>
+        
+        <button class="btn" type="submit">
+          Ouvrir l'espace admin
+        </button>
+    
+      </form>
+
+      <div class="msg" id="adminMsg"></div>
+
+    </section>
+
+    <!-- TABLEAU DE BORD ADMIN -->
+    <section class="panel hidden" id="adminPanel">
+
+      <h2>Comptes inscrits</h2>
+
+      <p class="muted">
+        Liste des inscriptions enregistrées sur cet appareil.
+      </p>
+      
+      <div id="users"></div>
+
+      <button class="btn" id="export" type="button">
+        Exporter les inscriptions
+      </button>
+    
+    </section>
+
+    <p class="notice">
+      Version de démonstration locale. Pour un vrai site public,
+      les comptes et les autorisations administrateur doivent
+      être gérés par un serveur sécurisé.
+    </p>
+
+  </main>
+
+  <!-- Fichier JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
